@@ -1,0 +1,17 @@
+<div class="page-content containet-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h1 class="page-title">{{name}}</h1>
+            <br>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="javascript:void(0)" (click)="showTicker('ETH')"><i class="icon md-home" aria-hidden="true"></i> ETH</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="javascript:void(0)" (click)="showTicker('DASH')"><i class="icon md-account" aria-hidden="true"></i> DASH</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="javascript:void(0)" (click)="showTicker('DOGE')"><i class="icon md-home" aria-hidden="true"></i> DOGE</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="javascript:void(0)" (click)="showTicker('USDT')"><i class="icon md-home" aria-hidden="true"></i> USDT</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <router-outlet name="ticker"></router-outlet>
+        </div>
+    </div>
+</div>
