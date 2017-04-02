@@ -10,11 +10,18 @@ import {HistoryComponent} from "./components/history/history.component";
 import {CycleComponent} from "./components/cycle/cycle.component";
 import {SocialComponent} from "./components/social/social.component";
 import {TickerComponent} from "./components/market/ticker.component";
+import {BalancesService} from "./services/balances.service";
+import {Http, HttpModule, JsonpModule} from "@angular/http";
+import {FormsModule} from "@angular/forms";
+import {TickerService} from "./services/ticker.service";
 
 @NgModule({
     imports: [
         BrowserModule,
-        Routing
+        Routing,
+        FormsModule,
+        HttpModule,
+        JsonpModule
     ],
     declarations: [
         AppComponent,
@@ -27,6 +34,7 @@ import {TickerComponent} from "./components/market/ticker.component";
         SocialComponent,
         TickerComponent
     ],
+    providers: [BalancesService, TickerService],
     bootstrap: [ AppComponent, MenuComponent ]
 })
 

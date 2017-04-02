@@ -13,24 +13,10 @@
                         <h3 class="panel-title">My holdings</h3>
                     </div>
                     <ul class="list-group list-group-bordered">
-                        <li class="list-group-item">
-                            <div class="col-sm-2"><h3 style="margin-top: 5px;">ETH</h3></div>
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-3" style="text-align: right"><h4>5.72ETH</h4><span>0.01BTC</span></div>
-                            <div class="col-sm-3" style="text-align: right"><h4>+52%</h4><span>+3%</span></div>
-
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-sm-2"><h3 style="margin-top: 5px;">DOGE</h3></div>
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-3" style="text-align: right"><h4>5.72DOGE</h4><span>0.01BTC</span></div>
-                            <div class="col-sm-3" style="text-align: right"><h4>+52%</h4><span>+3%</span></div>
-
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-sm-2"><h3 style="margin-top: 5px;">DASH</h3></div>
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-3" style="text-align: right"><h4>5.72DASH</h4><span>0.01BTC</span></div>
+                        <li *ngFor="let balance of balances" class="list-group-item">
+                            <div class="col-sm-2"><h3 style="margin-top: 5px;">{{balance.currency}}</h3></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-4" style="text-align: right"><h4>{{balance.amount|number : '1.2-8'}} {{balance.currency}}</h4><span>0.01 BTC</span></div>
                             <div class="col-sm-3" style="text-align: right"><h4>+52%</h4><span>+3%</span></div>
 
                         </li>
@@ -60,7 +46,9 @@
                                 GBP Est: 2021£
                                 <span class="float-right">+0.232(+12.8%)</span>
                             </div>
-                            <div class="ct-chart chart-line h-100"></div>
+                            <div class="ct-chart chart-line h-100">
+                                <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"></g><g><g class="ct-series ct-series-a"><path d="M4,53.714L39.107,37.143L74.214,70.286L109.321,20.571L144.429,4L179.536,28.857L214.643,23.886L249.75,43.771" class="ct-line"></path><line x1="4" y1="53.71428571428571" x2="4.01" y2="53.71428571428571" class="ct-point" value="4"></line><line x1="39.107142857142854" y1="37.14285714285714" x2="39.11714285714285" y2="37.14285714285714" class="ct-point" value="5"></line><line x1="74.21428571428571" y1="70.28571428571428" x2="74.22428571428571" y2="70.28571428571428" class="ct-point" value="3"></line><line x1="109.32142857142856" y1="20.57142857142857" x2="109.33142857142856" y2="20.57142857142857" class="ct-point" value="6"></line><line x1="144.42857142857142" y1="4" x2="144.4385714285714" y2="4" class="ct-point" value="7"></line><line x1="179.53571428571428" y1="28.85714285714286" x2="179.54571428571427" y2="28.85714285714286" class="ct-point" value="5.5"></line><line x1="214.6428571428571" y1="23.885714285714286" x2="214.6528571428571" y2="23.885714285714286" class="ct-point" value="5.8"></line><line x1="249.74999999999997" y1="43.77142857142859" x2="249.75999999999996" y2="43.77142857142859" class="ct-point" value="4.6"></line></g></g><g class="ct-labels"></g></svg>
+                            </div>
                         </div>
                         <div class="p-30">
                             <div class="row no-space">

@@ -7,6 +7,7 @@ import {MarketComponent} from "./components/market/market.component";
 import {TickerComponent} from "./components/market/ticker.component";
 import {CycleComponent} from "./components/cycle/cycle.component";
 import {SocialComponent} from "./components/social/social.component";
+
 export const routes: Routes = [
     { path: '.', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
@@ -18,10 +19,5 @@ export const routes: Routes = [
     { path: 'cycle', component: CycleComponent },
     { path: 'social', component: SocialComponent }
 ];
-
-// Deprecated provide
-// export const APP_ROUTER_PROVIDERS = [
-//   provideRouter(routes)
-// ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(routes);

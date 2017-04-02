@@ -1,4 +1,36 @@
-<h3>{{currency}}</h3>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-bordered">
+            <div class="panel-heading">
+                <h2 class="panel-title">{{currency}}</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                <div class="col-sm-6">
+                    <dl class="dl-horizontal">
+                        <dt>Last Price</dt>
+                        <dd>{{ticker.last|number : '1.2-8'}} BTC</dd>
+                        <dt>Lowest Ask</dt>
+                        <dd>{{ticker.lowestAsk|number : '1.2-8'}} BTC</dd>
+                        <dt>Highest Bid</dt>
+                        <dd>{{ticker.highestBid|number : '1.2-8'}} BTC</dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl class="dl-horizontal">
+                        <dt>Base Volume</dt>
+                        <dd>{{ticker.baseVolume|number : '1.2-8'}} BTC</dd>
+                        <dt>Quote Volume</dt>
+                        <dd>{{ticker.quoteVolume|number : '1.2-8'}} BTC</dd>
+                        <dt>Platform</dt>
+                        <dd>{{ticker.platform}}</dd>
+                    </dl>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-6">
         <div class="panel panel-bordered panel-success">
@@ -6,13 +38,13 @@
                 <h3 class="panel-title">Buy {{currency}}</h3>
             </div>
             <div class="alert alert-success" role="alert">
-                Lowest ask: <a class="alert-link" href="javascript:void(0)">####</a>.
+                Lowest ask: <a class="alert-link" href="javascript:void(0)">{{ticker.lowestAsk|number : '1.2-8'}}</a>.
             </div>
             <div class="panel-body">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="{{currency}} to buy">
+                    <input type="text" class="form-control" id="buy-amount" placeholder="{{currency}} to buy">
                     <span class="input-group-btn">
-                      <button type="button" class="btn btn-success waves-effect waves-light">Buy</button>
+                      <button type="button" id="buy-button" class="btn btn-success waves-effect waves-light" (click)="buy($event)">Buy</button>
                     </span>
                 </div>
             </div>
@@ -24,13 +56,13 @@
                 <h3 class="panel-title">Sell {{currency}}</h3>
             </div>
             <div class="alert alert-danger" role="alert">
-                Highest bid: <a class="alert-link" href="javascript:void(0)">####</a>.
+                Highest bid: <a class="alert-link" href="javascript:void(0)">{{ticker.highestBid|number : '1.2-8'}}</a>.
             </div>
             <div class="panel-body">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="{{currency}} to sell">
+                    <input type="text" class="form-control" id="sell-amount" placeholder="{{currency}} to sell">
                     <span class="input-group-btn">
-                          <button type="button" class="btn btn-danger waves-effect waves-light">Sell</button>
+                          <button type="button" id="sell-button" class="btn btn-danger waves-effect waves-light" (click)="sell($event)">Sell</button>
                         </span>
                 </div>
             </div>
